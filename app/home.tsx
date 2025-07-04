@@ -1,31 +1,9 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useRef } from 'react'
 
 const HomePage = () => {
     const videoRef = useRef(null)
-    const [videoStatus, setVideoStatus] = useState(false)
-    const [indicator, setIndicator] = useState(false)
-
-    // useEffect(() => {
-    //     setVideoStatus(videoRef?.current?.paused)
-    // }, [videoRef, indicator])
-
-    console.log("Video Paused= " + videoStatus)
-
-    // const handlePlayVideo = () => {
-    //     if (videoRef?.current) {
-    //         videoRef?.current?.play()
-    //         setIndicator(!indicator)
-    //     }
-    // }
-
-    // const handleStopVideo = () => {
-    //     if (videoRef?.current) {
-    //         videoRef?.current.pause()
-    //         setIndicator(false)
-    //     }
-    // }
     return (
         <div className='w-full h-dvh bg-zinc-800 relative overflow-clip'>
             {/* === SUB CONTAINER === */}
@@ -75,11 +53,6 @@ const HomePage = () => {
                         {/* === ENTER BUTTON === */}
                         <div className="z-30 mt-10 zoom-in-animation">
                             <button >ENTER</button>
-                            {/* {videoStatus ?
-                                <button onClick={handlePlayVideo}>PLAY</button>
-                                :
-                                <button onClick={handleStopVideo}>STOP</button>
-                            } */}
                         </div>
                     </div>
 
