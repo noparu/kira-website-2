@@ -23,13 +23,13 @@ img, p, div {
 h1 {
   /* -webkit-text-stroke: 1px #292b2e; */
   font-family: 'EB Garamond', serif;
-  @apply text-5xl text-white font-bold select-none
+  @apply text-5xl text-white font-bold select-none text-center
 }
 
 h3 {
   /* -webkit-text-stroke: 1px #292b2e; */
   font-family: 'EB Garamond', serif;
-  @apply text-3xl text-white font-black select-none
+  @apply text-3xl text-white font-black select-none text-center
 }
 
 button {
@@ -38,30 +38,12 @@ button {
   hover:shadow-red-600 hover:bg-red-600 hover:text-red-200 transition-all ease-in-out
 }
 
-@keyframes zoom {
+@keyframes zoom-in-out {
   0%, 100% {
     transform: scale(1);
   }
   50% {
     transform: scale(1.3);
-  }
-}
-
-@keyframes fadepulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
 
@@ -74,18 +56,40 @@ button {
   }
 }
 
-.fade-in {
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.fade-in-animation {
   animation: fade-in 10s ease-in-out forwards;
 }
 
-.zoom-in {
+.fade-in-animation-2 {
+  animation: fade-in 3s ease-in-out forwards;
+}
+
+.zoom-in-animation {
   animation: zoom-in 10s ease-in-out forwards;
 }
 
-.animate-mist {
-  animation: zoom 17s ease-in-out infinite, fadepulse 13s ease-out infinite;
+.fade-pulse-animation {
+  animation: zoom-in-out 17s ease-in-out infinite, fade-pulse 13s ease-out infinite;
 }
 
-.animate-mist-2 {
-  animation: zoom 13s ease-in-out infinite, fadepulse 17s ease-out infinite;
+.fade-pulse-animation-2 {
+  animation: zoom-in-out 13s ease-in-out infinite, fade-pulse 17s ease-out infinite;
 }
