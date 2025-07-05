@@ -1,31 +1,38 @@
 'use client'
-import React from 'react'
-import { useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const HomePage = () => {
-    const videoRef = useRef(null)
+const Home = () => {
+    const [canClick, setCanClick] = useState(false);
+    const [fadeOutAnimation, setFadeOutAnimation] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setCanClick(true);
+        }, 8_000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    const handleAddClass = () => {
+        if (!canClick) return;
+        if (!fadeOutAnimation) {
+            setFadeOutAnimation(true);
+        } else {
+            return;
+        }
+    }
+
     return (
         <div className='w-full h-dvh bg-zinc-800 relative overflow-clip'>
             {/* === SUB CONTAINER === */}
-            <div className='w-full h-full flex items-center justify-center fade-in-animation'>
+            <div className={`w-full h-full flex items-center justify-center fade-in-animation 
+                ${fadeOutAnimation ? "fade-out-animation" : ""}
+                `}>
                 {/* === INNER CONTENT === */}
                 <div className='w-full h-full'>
 
                     {/* === BACKGROUND LAYERS === */}
                     <div className="absolute left-0 top-0 w-full h-full flex items-center justify-center overflow-clip">
-                        <div className='absolute w-full h-dvh left-0 top-0 my-auto opacity-25 flex items-center justify-center'>
-                            <video className='w-full h-full object-cover' preload='none' autoPlay ref={videoRef} >
-                                <source src="/death-note-amv.mp4" type="video/mp4" />
-                                <track
-                                    src="/path/to/captions.vtt"
-                                    kind="subtitles"
-                                    srcLang="en"
-                                    label="English"
-                                />
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-
                         {/* Mist layers */}
                         <img id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation z-20" />
                         <img id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation z-20" />
@@ -52,15 +59,17 @@ const HomePage = () => {
 
                         {/* === ENTER BUTTON === */}
                         <div className="z-30 mt-10 zoom-in-animation">
-                            <button >ENTER</button>
+                            {canClick ? 
+                            <button onClick={handleAddClass} className="">ENTER</button>
+                            :
+                            <button className={`cursor-not-allowed`} >LOADING...</button>
+                            }
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
     )
 }
 
-export default HomePage
+export default Home

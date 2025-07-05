@@ -34,8 +34,7 @@ h3 {
 
 button {
   font-family: 'EB Garamond', serif;
-  @apply text-3xl text-zinc-900 font-black select-none bg-white px-10 shadow-lg/100 shadow-white opacity-70 cursor-pointer
-  hover:shadow-red-600 hover:bg-red-600 hover:text-red-200 transition-all ease-in-out
+  @apply text-3xl text-zinc-900 font-black select-none bg-white px-10 shadow-lg/100 shadow-white opacity-70 transition-all ease-in-out hover:shadow-red-600 hover:bg-red-600 hover:text-red-200 cursor-pointer
 }
 
 @keyframes zoom-in-out {
@@ -56,12 +55,30 @@ button {
   }
 }
 
+@keyframes zoom-out {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.8);
+  }
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
@@ -78,12 +95,16 @@ button {
   animation: fade-in 10s ease-in-out forwards;
 }
 
-.fade-in-animation-2 {
-  animation: fade-in 3s ease-in-out forwards;
+.fade-out-animation {
+  animation: fade-out 5s ease-in-out forwards;
 }
 
 .zoom-in-animation {
   animation: zoom-in 10s ease-in-out forwards;
+}
+
+.zoom-out-animation {
+  animation: zoom-out 5s ease-in-out forwards;
 }
 
 .fade-pulse-animation {
