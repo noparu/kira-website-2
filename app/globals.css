@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @font-face {
   font-family: 'EB Garamond';
   src: url('/font/EBGaramond-VariableFont_wght.ttf') format('truetype');
@@ -15,6 +14,10 @@
   font-style: italic;
 }
 
+* {
+  font-family: 'EB Garamond', serif;
+}
+
 img, p, div {
   -webkit-user-drag: none;
   user-drag: none;
@@ -22,19 +25,12 @@ img, p, div {
 
 h1 {
   /* -webkit-text-stroke: 1px #292b2e; */
-  font-family: 'EB Garamond', serif;
-  @apply text-5xl text-white font-bold select-none text-center
+  @apply text-5xl font-bold select-none text-center
 }
 
 h3 {
   /* -webkit-text-stroke: 1px #292b2e; */
-  font-family: 'EB Garamond', serif;
-  @apply text-3xl text-white font-black select-none text-center
-}
-
-button {
-  font-family: 'EB Garamond', serif;
-  @apply text-3xl text-zinc-900 font-black select-none bg-white px-10 shadow-lg/100 shadow-white opacity-70 transition-all ease-in-out hover:shadow-red-600 hover:bg-red-600 hover:text-red-200 cursor-pointer
+  @apply text-3xl font-black select-none text-center
 }
 
 @keyframes zoom-in-out {
