@@ -1,11 +1,11 @@
-import Home from './home'
+import HomeContent from './homeContent'
 
-const HomePage = () => {
+const HomeSSR = () => {
     return (
-        <>
-            <Home />
-        </>
+        <div className='relative w-full h-dvh overflow-clip'>
+            <HomeContent />
+        </div>
     )
 }
 
-export default HomePage
+export default HomeSSR

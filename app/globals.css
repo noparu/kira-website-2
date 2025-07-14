@@ -14,6 +14,10 @@
   font-style: italic;
 }
 
+body {
+  @apply bg-zinc-800
+}
+
 * {
   font-family: 'EB Garamond', serif;
 }

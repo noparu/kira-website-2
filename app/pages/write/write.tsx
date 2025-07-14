@@ -28,14 +28,10 @@ const Write = () => {
                     {/* === BACKGROUND LAYERS === */}
                     <div className="absolute left-0 top-0 w-full h-full flex items-center justify-center overflow-clip">
                         {/* Mist layers */}
-                        <Image alt="mist-kira" id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation z-20 pointer-events-none" layout="fill"
-                            objectFit="cover" />
-                        <Image alt="mist-kira" id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation z-20" layout="fill"
-                            objectFit="cover" />
-                        <Image alt="mist-kira" id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation-2 z-20" layout="fill"
-                            objectFit="cover" />
-                        <Image alt="mist-kira" id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation-2 z-20" layout="fill"
-                            objectFit="cover" />
+                        <img alt="mist-kira" id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation z-20 pointer-events-none"/>
+                        <img alt="mist-kira" id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation z-20"/>
+                        <img alt="mist-kira" id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation-2 z-20"/>
+                        <img alt="mist-kira" id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation-2 z-20"/>
 
                         {/* Center heart image */}
                         {/* <img src='/kira-heart.png' className='w-[800px] zoom-in-animation' /> */}
