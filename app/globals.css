@@ -91,12 +91,20 @@ h3 {
   animation: fade-in 10s ease-in-out forwards;
 }
 
+.fade-in-animation-2 {
+  animation: fade-in 5s ease-in-out forwards;
+}
+
 .fade-out-animation {
   animation: fade-out 5s ease-in-out forwards;
 }
 
 .zoom-in-animation {
   animation: zoom-in 10s ease-in-out forwards;
+}
+
+.zoom-in-animation-2 {
+  animation: zoom-in 5s ease-in-out forwards;
 }
 
 .zoom-out-animation {
