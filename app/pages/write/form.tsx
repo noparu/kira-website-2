@@ -74,7 +74,7 @@ const WriteForm = ({ handleToggleForm }: any) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setMessageStatus('')
-        }, 3_000);
+        }, 5_000);
 
         return () => {
             clearTimeout(timer)
@@ -92,7 +92,7 @@ const WriteForm = ({ handleToggleForm }: any) => {
                 />
                 <button type={isLoading ? 'button' : 'submit'} className='absolute right-0 top-0 bottom-0 text-xl -mt-1 outline-none text-white font-bold hover:opacity-80 cursor-pointer active:scale-[0.9] transition-all'>{isLoading ? 'SENDING' : buttonText}</button>
             </form>
-            <div className={`mt-2 transition-all text-center text-red-500 text-lg font-bold px-2 flex items-center justify-center ${messageStatus == '' ? 'h-0' : 'border border-red-500 h-10'}`}>{messageStatus}</div>
+            <div className={`mt-2 transition-all text-center  text-lg font-bold px-2 flex items-center justify-center ${messageStatus == '' ? 'h-0' : messageStatus == 'Successfully written!' ? 'text-green-500 border border-green-500 h-10' : 'text-red-500 border border-red-500 h-10'}`}>{messageStatus}</div>
         </>
     )
 }
