@@ -1,13 +1,12 @@
 'use client'
 import React, { useState } from 'react'
 import WriteForm from './form';
-import Image from 'next/image';
 
 const Write = () => {
     const [write, setWrite] = useState(false);
 
     const handleToggleForm = () => {
-        
+
         const timer = setTimeout(() => {
             setWrite(!write);
             // setCanClick(true);
@@ -19,26 +18,17 @@ const Write = () => {
     }
 
     return (
-        <div className='w-full h-dvh bg-zinc-800 relative overflow-clip'>
-            {/* === SUB CONTAINER === */}
+        <div className='w-full h-dvh bg-zinc-800 relative overflow-clip transition-all'>
             <div className={`w-full h-full flex items-center justify-center fade-in-animation-2`}>
-                {/* === INNER CONTENT === */}
                 <div className='w-full h-full'>
 
-                    {/* === BACKGROUND LAYERS === */}
                     <div className="absolute left-0 top-0 w-full h-full flex items-center justify-center overflow-clip">
-                        {/* Mist layers */}
-                        <img alt="mist-kira" id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation z-20 pointer-events-none"/>
-                        <img alt="mist-kira" id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation z-20"/>
-                        <img alt="mist-kira" id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation-2 z-20"/>
-                        <img alt="mist-kira" id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation-2 z-20"/>
-
-                        {/* Center heart image */}
-                        {/* <img src='/kira-heart.png' className='w-[800px] zoom-in-animation' /> */}
+                        <img alt="mist-kira" id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation z-20 pointer-events-none" />
+                        <img alt="mist-kira" id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation z-20" />
+                        <img alt="mist-kira" id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation-2 z-20" />
+                        <img alt="mist-kira" id="mis-1" src="/mist-1.jpg" className="absolute mix-blend-plus-lighter w-full h-dvh object-cover fade-pulse-animation-2 z-20" />
                     </div>
 
-                    {!write ? 
-                    // === TEXT OVERLAY ===
                     <div className="relative w-full h-dvh flex flex-col items-center justify-center p-2 md:p-0">
                         <div className="w-full flex flex-col items-center justify-center z-10 text-shadow-lg/100 opacity-65 text-shadow-zinc-800 text-white">
                             <h1>Kira Will Deliver</h1>
@@ -48,13 +38,11 @@ const Write = () => {
                             <h3 className='mt-5'>Do you want justice?</h3>
                         </div>
 
-                        {/* === ENTER BUTTON === */}
                         <div onClick={handleToggleForm} className='relative z-30 cursor-pointer'>
-                            <h2 className='mt-5 text-red-500 text-shadow-lg text-shadow-red-700 text-center text-4xl relative z-50 cursor-pointer hover:text-shadow-red-900 hover:text-red-600 transition-all'>All Kira needs is a name</h2>
+                            <h2 className='mt-5 text-red-500 text-shadow-lg text-shadow-red-700 text-center text-4xl relative z-50 animate-pulse cursor-pointer hover:text-shadow-red-900 hover:text-red-600 transition-all'>All Kira needs is a name</h2>
                         </div>
+                        <WriteForm />
                     </div>
-                    : <WriteForm handleToggleForm={handleToggleForm} />
-                    }
                 </div>
             </div>
         </div>
