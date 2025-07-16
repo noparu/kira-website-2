@@ -1,12 +1,12 @@
 import React from 'react'
-import Write from './write'
+import WriteContent from './writeContent'
 
-const WritePage = () => {
+const WriteSSR = () => {
   return (
     <>
-    <Write />
+    <WriteContent />
     </>
   )
 }
 
-export default WritePage
+export default WriteSSR

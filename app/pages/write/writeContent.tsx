@@ -1,21 +1,10 @@
 'use client'
 import React, { useState } from 'react'
 import WriteForm from './form';
+import { useRouter } from 'next/navigation';
 
-const Write = () => {
-    const [write, setWrite] = useState(false);
-
-    const handleToggleForm = () => {
-
-        const timer = setTimeout(() => {
-            setWrite(!write);
-            // setCanClick(true);
-        }, 2_000);
-
-        return () => {
-            clearTimeout(timer)
-        }
-    }
+const WriteContent = () => {
+    const router = useRouter()
 
     return (
         <div className='w-full h-dvh bg-zinc-800 relative overflow-clip transition-all'>
@@ -38,10 +27,11 @@ const Write = () => {
                             <h3 className='mt-5'>Do you want justice?</h3>
                         </div>
 
-                        <div onClick={handleToggleForm} className='relative z-30 cursor-pointer'>
-                            <h2 className='mt-5 text-red-500 text-shadow-lg text-shadow-red-700 text-center text-4xl relative z-50 animate-pulse cursor-pointer hover:text-shadow-red-900 hover:text-red-600 transition-all'>All Kira needs is a name</h2>
+                        <div className='relative z-30 cursor-pointer'>
+                            <h2 className='mt-5 text-red-500 text-shadow-lg text-shadow-red-700 text-center text-4xl relative z-50 animate-pulse cursor-pointer hover:text-shadow-red-900 hover:text-red-600 transition-all active:scale-[0.9]'>All Kira needs is a name</h2>
                         </div>
                         <WriteForm />
+                        <h4 className='text-white relative z-50'>Join to <a href="https://t.me/kira_messages" target='_blank' rel='noopener noreferrer'><span className='text-blue-500 cursor-pointer hover:opacity-80 active:scale-[0.9] transition-all'>TELEGRAM</span></a> to see Writen Names</h4>
                     </div>
                 </div>
             </div>
@@ -49,4 +39,4 @@ const Write = () => {
     )
 }
 
-export default Write
+export default WriteContent
